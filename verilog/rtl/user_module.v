@@ -1,39 +1,45 @@
-/* Automatically generated from https://wokwi.com/projects/334445762078310996 */
+/* Automatically generated from https://wokwi.com/projects/348540666182107731 */
 
 `default_nettype none
 
-module user_module_334445762078310996(
+module user_module_348540666182107731(
   input [7:0] io_in,
   output [7:0] io_out
 );
-  wire net1 = 1'b1;
-  wire net2 = 1'b0;
-  wire net3;
-  wire net4;
-  wire net5;
-  wire net6;
-  wire net7;
-  wire net8 = 1'b1;
-  wire net9 = 1'b0;
+  wire net1 = io_in[0];
+  wire net2 = io_in[1];
+  wire net3 = io_in[2];
+  wire net4 = io_in[3];
+  wire net5 = io_in[4];
+  wire net6 = io_in[5];
+  wire net7 = io_in[6];
+  wire net8 = io_in[7];
+  wire net9;
   wire net10;
   wire net11;
-  wire net12 = 1'b1;
-  wire net13 = 1'b0;
+  wire net12;
+  wire net13;
   wire net14;
-  wire net15 = 1'b1;
-  wire net16 = 1'b0;
-  wire net17;
-  wire net18 = 1'b0;
+  wire net15;
+  wire net16;
+  wire net17 = 1'b0;
+  wire net18 = 1'b1;
   wire net19 = 1'b1;
   wire net20;
-  wire net21 = 1'b1;
+  wire net21;
   wire net22;
-  wire net23;
-  wire net24 = 1'b0;
-  wire net25 = 1'b0;
+
+  assign io_out[0] = net9;
+  assign io_out[1] = net10;
+  assign io_out[2] = net11;
+  assign io_out[3] = net12;
+  assign io_out[4] = net13;
+  assign io_out[5] = net14;
+  assign io_out[6] = net15;
+  assign io_out[7] = net16;
 
   and_cell gate1 (
-    .a (net3)
+
   );
   or_cell gate2 (
 
@@ -42,47 +48,63 @@ module user_module_334445762078310996(
 
   );
   nand_cell gate4 (
-    .a (net4),
-    .b (net5),
-    .out (net6)
+    .a (net6),
+    .b (net14),
+    .out (net13)
   );
   not_cell gate5 (
-    .in (net7),
-    .out (net5)
+
   );
   buffer_cell gate6 (
 
   );
   mux_cell mux1 (
-    .a (net8),
-    .b (net9),
-    .sel (net10),
-    .out (net11)
-  );
-  dff_cell flipflop1 (
 
   );
-  mux_cell mux2 (
-    .a (net12),
-    .b (net13),
-    .sel (net10),
+  dff_cell flipflop1 (
+    .d (net2),
+    .clk (net1),
+    .q (net9),
+    .notq (net10)
+  );
+  dff_cell flop1 (
+
+  );
+  dffsr_cell flipflop2 (
+    .d (net2),
+    .clk (net3),
+    .s (net4),
+    .r (net5),
+    .q (net11),
+    .notq (net12)
+  );
+  nand_cell gate7 (
+    .a (net13),
+    .b (net7),
     .out (net14)
   );
-  mux_cell mux3 (
-    .a (net15),
-    .b (net16),
-    .sel (net10),
-    .out (net17)
-  );
-  mux_cell mux4 (
-    .a (net18),
-    .b (net19),
-    .sel (net10),
+  and_cell gate8 (
+    .a (net2),
+    .b (net8),
     .out (net20)
   );
-  and_cell gate7 (
-    .a (net22),
-    .b (net23),
-    .out (net4)
+  or_cell gate9 (
+    .a (net2),
+    .b (net8),
+    .out (net21)
+  );
+  and_cell gate10 (
+    .a (net21),
+    .b (net15),
+    .out (net22)
+  );
+  or_cell gate11 (
+    .a (net20),
+    .b (net22),
+    .out (net15)
+  );
+  not_cell gate12 (
+    .in (net1),
+    .out (net16)
   );
 endmodule
